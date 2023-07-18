@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../reseteo.css" />
+    <link rel="stylesheet" href="../estilos.css" />
+    <title>Listado de personajes</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1 id="titulo">Personajes de Mortadelo y Filemón</h1>
+      <div class="busqueda" id="buscador">
+        <label for="barra-busqueda"></label>
+        <input type="text" id="barra-busqueda" />
+        <button id="boton-filtro">Filtrar</button>
+      </div>
+      <div class="tablero-personajes" id="tablero"></div>
+    </div>
+    <script type="module" src="personajes-listado.ts"></script>
+  </body>
+</html>

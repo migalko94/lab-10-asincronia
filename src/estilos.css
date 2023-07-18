@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+:root {
+  --bg-color: rgb(229, 234, 238);
+  --color-primary: #00ad74;
+  --card-color: white;
+  --color-secondary: #008c86;
+  --font-family: Roboto, "Arial", "Helvetica", sans-serif;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  font-family: var(--font-family);
+  margin: 0;
+  line-height: 1;
+  min-width: auto;
+  min-height: auto;
+  background-color: var(--bg-color);
+  display: flex;
+  flex-wrap: wrap;
+  place-items: center;
+}
+
+h1 {
+  padding: 1rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+#app {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#tablero {
+  display: grid;
+  margin: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+[id*="personaje-elemento"] {
+  display: flex;
+  width: 250px;
+  height: 350px;
+  flex-wrap: wrap;
+  padding: 1.25rem;
+  background-color: var(--card-color);
+}
+
+[id*="nombre"],
+[id*="especialidad"],
+[id*="habilidades"] {
+  font-size: 12px;
+  text-align: left;
+}
+
+[id*="nombre"] span,
+[id*="especialidad"] span,
+[id*="habilidades"] span {
+  font-weight: bold;
+}
+
+[id*="personaje-elemento-"] img {
+  width: 160px;
+  height: 170px;
+}
+
+.card {
+  padding: 2rem;
+}
+
+button {
+  padding: 12px 24px;
+  background-color: var(--color-primary);
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  /**/
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: var(--color-secondary);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+#barra-busqueda {
+  height: 30px;
+  width: 230px;
+}
+
+@media screen and (max-width: 650px) {
+  #tablero {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  body {
+    display: flex;
+  }
+}
