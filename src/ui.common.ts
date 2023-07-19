@@ -24,13 +24,13 @@ const pintaAtributoPersonaje = (
   if (divPersonaje && atributoPersonaje) {
     switch (tipoInfo) {
       case "nombre":
-        atributoPersonaje.innerHTML = `<span>Nombre:</span>${personajes[indice].nombre}`;
+        atributoPersonaje.innerHTML = `<span>Nombre: </span>${personajes[indice].nombre}`;
         break;
       case "especialidad":
-        atributoPersonaje.innerHTML = `<span>Especialidad:</span>${personajes[indice].especialidad}`;
+        atributoPersonaje.innerHTML = `<span>Especialidad: </span>${personajes[indice].especialidad}`;
         break;
       case "habilidades":
-        atributoPersonaje.innerHTML = `<span>Habilidad:</span>${personajes[indice].habilidades}`;
+        atributoPersonaje.innerHTML = `<span>Habilidad: </span>${personajes[indice].habilidades}`;
         break;
       default:
         console.error("El atributo no existe");
