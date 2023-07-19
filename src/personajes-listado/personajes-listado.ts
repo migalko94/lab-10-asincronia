@@ -1,9 +1,6 @@
+import { BOTON_FILTRAR, CAMPO_PERSONAJE } from "../constantes.common";
 import { pintaTodosPersonajes } from "../ui.common";
 import { leePersonajes } from "./personajes-listado.api";
-import {
-  BOTON_FILTRAR,
-  CAMPO_PERSONAJE,
-} from "./personajes-listado.constantes";
 
 const cargaPersonajes = async (): Promise<void> =>
   pintaTodosPersonajes(await leePersonajes());

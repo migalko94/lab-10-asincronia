@@ -1,6 +1,6 @@
+import { BOTON_NUEVA_BUSQUEDA } from "../constantes.common";
 import { pintaTodosPersonajes } from "../ui.common";
 import { filtraPersonaje } from "./personajes-filtro.api";
-import { BOTON_NUEVA_BUSQUEDA } from "./personajes-filtro.constantes";
 
 const capturaNombreUrl = (): string => {
   const parametrosUrl = new URLSearchParams(window.location.search);
