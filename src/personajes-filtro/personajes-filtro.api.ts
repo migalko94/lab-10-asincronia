@@ -1,6 +1,6 @@
 import Axios from "axios";
 import { URL_BUSQUEDA } from "./personajes-filtro.constantes";
-import { Personaje } from "./personajes-filtro.model";
+import { Personaje } from "../personajes-model";
 
 export const filtraPersonaje = async (
   personajeIntroducido: string

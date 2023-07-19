@@ -102,6 +102,12 @@ a {
   width: 230px;
 }
 
+#portada {
+  padding: 1rem;
+  max-width: 500px;
+  max-height: 500px;
+}
+
 @media screen and (max-width: 650px) {
   #tablero {
     display: flex;

@@ -1,6 +1,6 @@
 import Axios from "axios";
 import { URL_PERSONAJES } from "./personajes-listado.constantes";
-import { Personaje } from "./personajes-listado.model";
+import { Personaje } from "../personajes-model";
 
 export const leePersonajes = async (): Promise<Personaje[]> => {
   try {
