@@ -1,5 +1,10 @@
 import { leePersonajes } from "./personajes-listado.api";
-import { TABLERO_PERSONAJES, URL_RAIZ } from "./personajes-listado.constantes";
+import {
+  BOTON_FILTRAR,
+  CAMPO_PERSONAJE,
+  TABLERO_PERSONAJES,
+  URL_RAIZ,
+} from "./personajes-listado.constantes";
 import { Personaje } from "./personajes-listado.model";
 
 const pintaImagenPersonaje = (
@@ -79,5 +84,19 @@ const cargaPersonajes = async (): Promise<void> => {
   const personajes = await leePersonajes();
   pintaTodosPersonajes(personajes);
 };
+
+const realizaFiltradoPersonaje = (nombre: string) => {
+  window.location.href = `/personajes-filtro/index.html?nombre=${encodeURIComponent(
+    nombre
+  )}`;
+};
+
+if (BOTON_FILTRAR && BOTON_FILTRAR instanceof HTMLElement) {
+  BOTON_FILTRAR.addEventListener("click", () => {
+    if (CAMPO_PERSONAJE && CAMPO_PERSONAJE instanceof HTMLInputElement) {
+      realizaFiltradoPersonaje(CAMPO_PERSONAJE.value);
+    }
+  });
+}
 
 document.addEventListener("DOMContentLoaded", () => cargaPersonajes());
