@@ -6,14 +6,14 @@ import { leePersonajes } from "./personajes-listado.api";
 const pintarPersonajes = async (): Promise<void> => {
   const personajes = await leePersonajes();
   const tablero = document.getElementById("tablero");
-  if (tablero && tablero instanceof HTMLDivElement) {
-    personajes.forEach((personaje) => {
-      const contenedorPersonaje = crearContenedorPersonaje(personaje);
-      tablero.appendChild(contenedorPersonaje);
-    });
-  } else {
-    throw new Error("No se ha encontrado el contenedor del listado");
-  }
+  tablero && tablero instanceof HTMLDivElement
+    ? personajes.forEach((personaje) => {
+        const contenedorPersonaje = crearContenedorPersonaje(personaje);
+        tablero.appendChild(contenedorPersonaje);
+      })
+    : () => {
+        throw new Error("No se ha encontrado el contenedor del listado");
+      };
 };
 
 const realizaFiltradoPersonaje = (nombre: string) =>

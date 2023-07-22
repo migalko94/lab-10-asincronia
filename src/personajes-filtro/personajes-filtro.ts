@@ -11,21 +11,21 @@ const capturaNombreUrl = (): string => {
 const generaNuevaBusqueda = () =>
   (window.location.href = `/personajes-listado/index.html`);
 
-if (BOTON_NUEVA_BUSQUEDA) {
+if (BOTON_NUEVA_BUSQUEDA && BOTON_NUEVA_BUSQUEDA instanceof HTMLElement) {
   BOTON_NUEVA_BUSQUEDA.addEventListener("click", () => generaNuevaBusqueda());
 }
 
 const devuelvePersonajeIntroducido = async (): Promise<void> => {
   const personajes = await filtraPersonaje(capturaNombreUrl());
   const tablero = document.getElementById("tablero");
-  if (tablero && tablero instanceof HTMLDivElement) {
-    personajes.forEach((personaje) => {
-      const contenedorPersonaje = crearContenedorPersonaje(personaje);
-      tablero.appendChild(contenedorPersonaje);
-    });
-  } else {
-    throw new Error("No se ha encontrado el contenedor del listado");
-  }
+  tablero && tablero instanceof HTMLDivElement
+    ? personajes.forEach((personaje) => {
+        const contenedorPersonaje = crearContenedorPersonaje(personaje);
+        tablero.appendChild(contenedorPersonaje);
+      })
+    : () => {
+        throw new Error("No se ha encontrado el contenedor del listado");
+      };
 };
 
 document.addEventListener("DOMContentLoaded", () =>
