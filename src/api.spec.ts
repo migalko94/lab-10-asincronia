@@ -3,6 +3,8 @@ import { vi } from "vitest";
 import Axios from "axios";
 import { leePersonajes } from "./api";
 
+//Pendiente:
+
 describe("leePersonajes", () => {
   it("debería devolver personajes cuando la solicitud tiene una respuesta correcta", async () => {
     // Arrange

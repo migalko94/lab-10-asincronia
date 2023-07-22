@@ -26,9 +26,7 @@ const crearElementoParrafo = (
   return parrafo;
 };
 
-export const creaContenedorPersonaje = (
-  personaje: Personaje
-): HTMLDivElement => {
+const creaContenedorPersonaje = (personaje: Personaje): HTMLDivElement => {
   const elementoPersonaje = document.createElement("div");
   elementoPersonaje.classList.add("personaje-contenedor");
 
@@ -52,6 +50,8 @@ const pintaPersonajes = async (): Promise<void> => {
         throw new Error("No se ha encontrado el contenedor del listado");
       };
 };
+
+document.addEventListener("DOMContentLoaded", () => pintaPersonajes());
 
 const limpiaTablero = () =>
   TABLERO_PERSONAJES && TABLERO_PERSONAJES instanceof HTMLDivElement
@@ -81,5 +81,3 @@ if (BOTON_FILTRAR && BOTON_FILTRAR instanceof HTMLElement) {
     }
   });
 }
-
-document.addEventListener("DOMContentLoaded", () => pintaPersonajes());
