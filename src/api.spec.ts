@@ -1,7 +1,7 @@
-import { Personaje } from "../personajes-model";
+import { Personaje } from "./modelo";
 import { vi } from "vitest";
 import Axios from "axios";
-import { leePersonajes } from "./personajes-listado.api";
+import { leePersonajes } from "./api";
 
 describe("leePersonajes", () => {
   it("debería devolver personajes cuando la solicitud tiene una respuesta correcta", async () => {

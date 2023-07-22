@@ -70,7 +70,6 @@ h1 {
   padding: 2rem;
 }
 
-button,
 #boton-filtro {
   padding: 12px 24px;
   background-color: var(--color-primary);
@@ -86,7 +85,7 @@ button,
   transition: background-color 0.3s ease;
   margin: 0.5rem;
 }
-button:hover,
+
 #boton-filtro:hover {
   background-color: var(--color-secondary);
 }
@@ -104,12 +103,6 @@ a {
 #barra-busqueda {
   height: 30px;
   width: 230px;
-}
-
-#portada {
-  padding: 1rem;
-  max-width: 500px;
-  max-height: 500px;
 }
 
 @media screen and (max-width: 650px) {
