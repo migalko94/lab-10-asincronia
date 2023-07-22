@@ -1,5 +1,8 @@
-import { BOTON_NUEVA_BUSQUEDA } from "../constantes.common";
-import { crearContenedorPersonaje } from "../ui.common";
+import { BOTON_FILTRAR, CAMPO_PERSONAJE } from "../constantes.common";
+import {
+  crearContenedorPersonaje,
+  realizaFiltradoPersonaje,
+} from "../ui.common";
 import { filtraPersonaje } from "./personajes-filtro.api";
 
 const capturaNombreUrl = (): string => {
@@ -7,13 +10,6 @@ const capturaNombreUrl = (): string => {
   const nombre = parametrosUrl.get("nombre") || "";
   return decodeURIComponent(nombre);
 };
-
-const generaNuevaBusqueda = () =>
-  (window.location.href = `/personajes-listado/index.html`);
-
-if (BOTON_NUEVA_BUSQUEDA && BOTON_NUEVA_BUSQUEDA instanceof HTMLElement) {
-  BOTON_NUEVA_BUSQUEDA.addEventListener("click", () => generaNuevaBusqueda());
-}
 
 const devuelvePersonajeIntroducido = async (): Promise<void> => {
   const personajes = await filtraPersonaje(capturaNombreUrl());
@@ -31,3 +27,11 @@ const devuelvePersonajeIntroducido = async (): Promise<void> => {
 document.addEventListener("DOMContentLoaded", () =>
   devuelvePersonajeIntroducido()
 );
+
+if (BOTON_FILTRAR && BOTON_FILTRAR instanceof HTMLElement) {
+  BOTON_FILTRAR.addEventListener("click", () => {
+    if (CAMPO_PERSONAJE && CAMPO_PERSONAJE instanceof HTMLInputElement) {
+      realizaFiltradoPersonaje(CAMPO_PERSONAJE.value);
+    }
+  });
+}

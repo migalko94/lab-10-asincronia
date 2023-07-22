@@ -44,3 +44,8 @@ export const crearContenedorPersonaje = (
   elementoPersonaje.appendChild(habilidades);
   return elementoPersonaje;
 };
+
+export const realizaFiltradoPersonaje = (nombre: string) =>
+  (window.location.href = `/personajes-filtro/index.html?nombre=${encodeURIComponent(
+    nombre
+  )}`);
