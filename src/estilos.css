@@ -42,30 +42,26 @@ h1 {
   justify-content: center;
 }
 
-[id*="personaje-elemento"] {
+.personaje-contenedor {
   display: flex;
-  width: 250px;
-  height: 350px;
+  width: 290px;
+  height: 360px;
   flex-wrap: wrap;
-  padding: 1.25rem;
+  padding: 2.5rem;
   background-color: var(--card-color);
 }
 
-[id*="nombre"],
-[id*="especialidad"],
-[id*="habilidades"] {
+.personaje-contenedor p {
   font-size: 12px;
   text-align: left;
   line-height: normal;
 }
 
-[id*="nombre"] span,
-[id*="especialidad"] span,
-[id*="habilidades"] span {
+.personaje-contenedor p span {
   font-weight: bold;
 }
 
-[id*="personaje-elemento-"] img {
+.personaje-contenedor img {
   width: 160px;
   height: 170px;
 }

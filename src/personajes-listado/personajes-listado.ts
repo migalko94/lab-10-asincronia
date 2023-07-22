@@ -1,9 +1,20 @@
 import { BOTON_FILTRAR, CAMPO_PERSONAJE } from "../constantes.common";
-import { pintaTodosPersonajes } from "../ui.common";
+import { crearContenedorPersonaje } from "../ui.common";
+
 import { leePersonajes } from "./personajes-listado.api";
 
-const cargaPersonajes = async (): Promise<void> =>
-  pintaTodosPersonajes(await leePersonajes());
+const pintarPersonajes = async (): Promise<void> => {
+  const personajes = await leePersonajes();
+  const tablero = document.getElementById("tablero");
+  if (tablero && tablero instanceof HTMLDivElement) {
+    personajes.forEach((personaje) => {
+      const contenedorPersonaje = crearContenedorPersonaje(personaje);
+      tablero.appendChild(contenedorPersonaje);
+    });
+  } else {
+    throw new Error("No se ha encontrado el contenedor del listado");
+  }
+};
 
 const realizaFiltradoPersonaje = (nombre: string) =>
   (window.location.href = `/personajes-filtro/index.html?nombre=${encodeURIComponent(
@@ -18,4 +29,4 @@ if (BOTON_FILTRAR && BOTON_FILTRAR instanceof HTMLElement) {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => cargaPersonajes());
+document.addEventListener("DOMContentLoaded", () => pintarPersonajes());
