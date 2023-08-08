@@ -10,11 +10,13 @@
   <body>
     <div id="app">
       <h1 id="titulo">Personajes de Mortadelo y Filemón</h1>
-      <div class="busqueda" id="buscador">
+
+      <form class="busqueda" id="buscador">
         <label for="barra-busqueda"></label>
-        <input type="text" required id="barra-busqueda" />
-        <form id="boton-filtro">Filtrar</form>
-      </div>
+        <input id="barra-busqueda" type="text" name="barra-busqueda" />
+        <button id="boton-filtro" type="submit">Filtrar</button>
+      </form>
+
       <div class="tablero-personajes" id="tablero"></div>
     </div>
     <script type="module" src="ui.ts"></script>
