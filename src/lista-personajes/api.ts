@@ -1,10 +1,10 @@
 import Axios from "axios";
 import { Personaje } from "./modelo";
-import { URL_BUSQUEDA } from "./constantes";
+import { URL_BUSQUEDA, URL_PERSONAJES } from "./constantes";
 
 export const leePersonajes = async (): Promise<Personaje[]> => {
   try {
-    const { data } = await Axios.get("http://localhost:3000/personajes");
+    const { data } = await Axios.get(URL_PERSONAJES);
     return data;
   } catch (error) {
     throw new Error("Error al obtener el listado de personajes");
