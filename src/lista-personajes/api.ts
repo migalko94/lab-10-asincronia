@@ -1,6 +1,8 @@
 import Axios from "axios";
 import { Personaje } from "./modelo";
-import { URL_BUSQUEDA, URL_PERSONAJES } from "./constantes";
+
+const URL_PERSONAJES = "http://localhost:3000/personajes";
+const URL_BUSQUEDA = "http://localhost:3000/personajes?nombre_like=";
 
 export const leePersonajes = async (): Promise<Personaje[]> => {
   try {
