@@ -28,7 +28,7 @@ describe("leePersonajes", () => {
     expect(result).toEqual(personajesMock);
   });
 
-  it('debería devolver una error "Demasiadas llamadas a la API de Personajes!" cuando rechaza la solicitud con el código 403', async () => {
+  it('debería devolver un error "Demasiadas llamadas a la API de Personajes!" cuando rechaza la solicitud con el código 403', async () => {
     // Arrange
     vi.spyOn(Axios, "get").mockRejectedValue({
       response: {
